@@ -95,7 +95,7 @@ public class LoginPage extends DriverFactory {
 		return true;
 	}
 	
-	@Step("Cliking on registration page link...")
+	@Step("Cliking on registration Page link...")
 	public RegistrationPage goToRegistrationPage() {
 		eleUtil.doClick(registerLink);
 		return new RegistrationPage(driver);
