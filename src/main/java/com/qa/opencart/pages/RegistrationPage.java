@@ -10,11 +10,9 @@ import io.qameta.allure.Step;
 
 public class RegistrationPage {
 
-	WebDriver driver;
 	ElementUtil eleUtil;
 
 	public RegistrationPage(WebDriver driver) {
-		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
 	}
 

@@ -2,10 +2,13 @@ package com.qa.opencart.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import io.qameta.allure.Description;
+import com.qa.opencart.listeners.TestAllureListener;
 
+import io.qameta.allure.Description;
+@Listeners(TestAllureListener.class)
 public class LoginPageNegativeTest extends BaseTest
 {
 	@DataProvider
