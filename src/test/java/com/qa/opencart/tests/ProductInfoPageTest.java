@@ -2,6 +2,7 @@ package com.qa.opencart.tests;
 
 import org.testng.annotations.Test;
 
+import com.qa.opencart.listeners.TestAllureListener;
 import com.qa.opencart.utils.Constants;
 
 import io.qameta.allure.Description;
@@ -12,7 +13,9 @@ import java.util.Map;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
+@Listeners(TestAllureListener.class)
 public class ProductInfoPageTest extends BaseTest{
 
 	@BeforeClass
