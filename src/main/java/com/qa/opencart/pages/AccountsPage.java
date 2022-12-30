@@ -32,11 +32,21 @@ public class AccountsPage extends DriverFactory {
 		return eleUtil.doGetTitle(Constants.ACCOUNT_PAGE_TITLE, Constants.DEFAULT_TIME_OUT);
 	}
 
+	
+	/**
+	 * This method is used to get account page header
+	 * @return This method return string account page header
+	 */
 	@Step("Getting account page header....")
 	public String getAccountsPageHeader() {
 		return eleUtil.doGetText(header);
 	}
 
+	
+	/**
+	 * 
+	 * @return this method return boolean value 
+	 */
 	@Step("checking logout link exist or not")
 	public boolean isLogoutLinkExist() {
 		return eleUtil.doIsDisplayed(logoutLink);

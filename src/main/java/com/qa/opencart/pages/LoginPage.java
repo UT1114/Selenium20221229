@@ -11,12 +11,10 @@ import io.qameta.allure.Step;
 
 public class LoginPage extends DriverFactory {
 
-//	private WebDriver driver;
 	private ElementUtil eleUtil;
 
 	public LoginPage(WebDriver driver) {
 		eleUtil = new ElementUtil(driver);
-		// PageFactory.initElements(driver, this);
 	}
 
 	private By emailId = By.id("input-email");
@@ -80,6 +78,11 @@ public class LoginPage extends DriverFactory {
 
 	}
 
+	/**
+	 * 
+	 * this method used to login with invalid credentials 
+	 * @return This method return boolean value
+	 */
 	@Step("Trying to login with invalid username: {0} and invalid password : {1}")
 	public boolean doLoginWrongCredentials(String un, String pwd) {
 		System.out.println("Trying to login with :" + un + " : " + pwd);
@@ -95,6 +98,11 @@ public class LoginPage extends DriverFactory {
 		return true;
 	}
 	
+	
+	/**
+	 *  This method used to click on registration link
+	 * @return It returns boolean value
+	 */
 	@Step("Cliking on registration Page link...")
 	public RegistrationPage goToRegistrationPage() {
 		eleUtil.doClick(registerLink);
