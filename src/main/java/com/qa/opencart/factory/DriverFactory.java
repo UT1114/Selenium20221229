@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -44,9 +45,16 @@ public class DriverFactory {
 			tlDriver.set(new ChromeDriver(optionManager.getChromeOptions()));
 
 		}
-
+		
+		else if (browserName.equalsIgnoreCase("opera")) {
+			WebDriverManager.operadriver().setup();
+			tlDriver.set(new OperaDriver());
+		}
+		
+	
 		else if (browserName.equalsIgnoreCase("firefox")) {
 //			driver = new FirefoxDriver(optionManager.getFirefoxOptions());
+
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver(optionManager.getFirefoxOptions()));
 		} else if (browserName.equalsIgnoreCase("edge")) {
