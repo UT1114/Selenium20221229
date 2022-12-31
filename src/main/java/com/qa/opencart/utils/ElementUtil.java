@@ -69,7 +69,16 @@ public class ElementUtil {
 		if (Boolean.parseBoolean(DriverFactory.highlight)) {
 			jsUtil.flash(element);
 		}
-		return element;
+		if (element==null) {
+			System.out.println("Element not found");
+			return element;
+		}
+		
+		else {
+			return element;
+		}
+		
+		
 		
 		
 	}

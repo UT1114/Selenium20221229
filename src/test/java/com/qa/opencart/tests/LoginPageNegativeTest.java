@@ -14,12 +14,12 @@ public class LoginPageNegativeTest extends BaseTest
 	@DataProvider
 	public Object[][] loginNegativeTestData() {
 		return	new Object [][] {
-			{"panka@gmail.com","MacBook Pro"},
-			{"Hel@llo.com","iMac"},
+			{"pankaj@gmail.com","MacBook Pro"},
+			{"Hel@lloo.com","iMac"},
 
-			{"Hellott@India.com","Samsung SyncMaster 941BW"},
+			{"Hellottt@India.com","Samsung SyncMaster 941BW"},
 
-			{"Panak@123@gmail.com","Apple Cinema 30\""}
+			{"Panak@1263@gmail.com","Apple Cinema 30\""}
 
 		};
 		}
@@ -27,7 +27,7 @@ public class LoginPageNegativeTest extends BaseTest
     @Description("Login Page Negative Test with invalid credentials")
 	@Test(priority = 1,dataProvider ="loginNegativeTestData" )
 	public void loginNegativeTest(String un,String pwd) {
-		Assert.assertTrue(loginPage.doLoginWrongCredentials(un, pwd));
+		Assert.assertFalse(loginPage.doLoginWrongCredentials(un, pwd));
 	}
 	
 	

@@ -11,11 +11,14 @@ import io.qameta.allure.Step;
 
 public class LoginPage extends DriverFactory {
 
-//	private WebDriver driver;
+	private WebDriver driver;
 	private ElementUtil eleUtil;
 
 	public LoginPage(WebDriver driver) {
+		this.driver=driver;
 		eleUtil = new ElementUtil(driver);
+		
+		
 		// PageFactory.initElements(driver, this);
 	}
 
@@ -76,6 +79,7 @@ public class LoginPage extends DriverFactory {
 		eleUtil.doSendKeys(emailId, un);
 		eleUtil.doSendKeys(password, pwd);
 		eleUtil.doClick(login);
+		System.out.println("Login success full");
 		return new AccountsPage(driver);
 
 	}
