@@ -16,9 +16,12 @@ import io.qameta.allure.Step;
 public class AccountsPage extends DriverFactory {
 
 	private ElementUtil eleUtil;
+	WebDriver driver;
 
 	public AccountsPage(WebDriver driver) {
+		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
+
 	}
 
 	private By header = By.cssSelector("div#logo a");
@@ -29,6 +32,7 @@ public class AccountsPage extends DriverFactory {
 
 	@Step("Getting account page title....")
 	public String getAccPageTitle() {
+	//	System.out.println("Title is :"+eleUtil.doGetTitle(Constants.ACCOUNT_PAGE_TITLE, Constants.DEFAULT_TIME_OUT));
 		return eleUtil.doGetTitle(Constants.ACCOUNT_PAGE_TITLE, Constants.DEFAULT_TIME_OUT);
 	}
 
