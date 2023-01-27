@@ -98,7 +98,7 @@ public class ElementUtil {
 
 	public void doClick(By locator) {
 		getElement(locator).click();
-		System.out.println(Errors.ELEMENT_NOT_FOUND);
+//		System.out.println(Errors.ELEMENT_NOT_FOUND);
 	}
 
 	public String doGetText(By locator) {

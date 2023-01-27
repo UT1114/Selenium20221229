@@ -11,18 +11,14 @@ import io.qameta.allure.Step;
 
 public class LoginPage extends DriverFactory {
 
-
 	private WebDriver driver;
 
 	private ElementUtil eleUtil;
 
 	public LoginPage(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
 
-		
-		
-	
 	}
 
 	private By emailId = By.id("input-email");
@@ -31,7 +27,6 @@ public class LoginPage extends DriverFactory {
 	private By registerLink = By.linkText("Register");
 	private By forgotPassword = By.linkText("Forgotten Password");
 	private By errorMESG = By.cssSelector("div.alert.alert-danger.alert-dismissible ");
-	
 
 	/**
 	 * This method is used to get title of the page
@@ -89,7 +84,8 @@ public class LoginPage extends DriverFactory {
 
 	/**
 	 * 
-	 * this method used to login with invalid credentials 
+	 * this method used to login with invalid credentials
+	 * 
 	 * @return This method return boolean value
 	 */
 	@Step("Trying to login with invalid username: {0} and invalid password : {1}")
@@ -106,10 +102,10 @@ public class LoginPage extends DriverFactory {
 		}
 		return true;
 	}
-	
-	
+
 	/**
-	 *  This method used to click on registration link
+	 * This method used to click on registration link
+	 * 
 	 * @return It returns boolean value
 	 */
 	@Step("Cliking on registration Page link...")
@@ -117,7 +113,5 @@ public class LoginPage extends DriverFactory {
 		eleUtil.doClick(registerLink);
 		return new RegistrationPage(driver);
 	}
-	
-	
 
 }

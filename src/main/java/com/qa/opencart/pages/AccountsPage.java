@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.internal.Utils;
 
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.utils.Constants;
@@ -29,16 +30,19 @@ public class AccountsPage extends DriverFactory {
 	private By searchField = By.name("search");
 	private By searchButton = By.cssSelector("div#search button");
 	private By logoutLink = By.linkText("Logout");
+	private By addressLink = By.linkText("Address Book");
 
 	@Step("Getting account page title....")
 	public String getAccPageTitle() {
-	//	System.out.println("Title is :"+eleUtil.doGetTitle(Constants.ACCOUNT_PAGE_TITLE, Constants.DEFAULT_TIME_OUT));
+		// System.out.println("Title is
+		// :"+eleUtil.doGetTitle(Constants.ACCOUNT_PAGE_TITLE,
+		// Constants.DEFAULT_TIME_OUT));
 		return eleUtil.doGetTitle(Constants.ACCOUNT_PAGE_TITLE, Constants.DEFAULT_TIME_OUT);
 	}
 
-	
 	/**
 	 * This method is used to get account page header
+	 * 
 	 * @return This method return string account page header
 	 */
 	@Step("Getting account page header....")
@@ -46,10 +50,9 @@ public class AccountsPage extends DriverFactory {
 		return eleUtil.doGetText(header);
 	}
 
-	
 	/**
 	 * 
-	 * @return this method return boolean value 
+	 * @return this method return boolean value
 	 */
 	@Step("checking logout link exist or not")
 	public boolean isLogoutLinkExist() {
@@ -86,6 +89,20 @@ public class AccountsPage extends DriverFactory {
 		eleUtil.doSendKeys(searchField, productName);
 		eleUtil.doClick(searchButton);
 		return new SearchResultPage(driver);
+
+	}
+
+	/**
+	 * This method is used to redirect Account page to addressBook Page
+	 * 
+	 * @return this method returns Address Book Page Object
+	 */
+	@Step("Click on Address Book Link ")
+	public AddressBookPage clickAddressLink() {
+
+		eleUtil.doClick(addressLink);
+		
+		return new AddressBookPage(driver);
 
 	}
 

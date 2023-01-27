@@ -18,7 +18,7 @@ public class LoginPageTest extends BaseTest {
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		Assert.assertEquals(loginPage.getPageTitle(), Constants.LOGIN_PAGE_TITLE);
-		;
+		
 	}
 
 	@Description("login Page Url Test")

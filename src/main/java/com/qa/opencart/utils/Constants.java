@@ -24,6 +24,24 @@ public class Constants {
 	public static final String EXCEL_SHEET_NAME="register";
 
 	public static final String EXCEL_PRODUCTSEARCH_SHEET_NAME = "product";
+	public static final String EXCEL_ADDRESS_SHEET_NAME = "address";
+
+
+	public static final String ADDRESS_BOOK_PAGE_TITLE_FRACTION = "Book";
+	public static final String ADDRESS_BOOK_PAGE_TITLE = "Address Book";
+
+	public static final String ADDRESS_BOOK_PAGE_HEADER = "Address Book Entries";
+
+	public static final String NEW_ADDRESS_PAGE_TITLE_FRACTION = "Address Bo";
+	public static final String NEW_ADDRESS_PAGE_TITLE = "Address Book";
+
+	public static final String NEW_ADDRESS_PAGE_HEADER = "Add Address";
+
+	public static final String NEW_ADDRESS_ADDED_SUCCESS_MSG = "Your address has been successfully added";
+
+	public static final String DELETE_ADDRESS_MESSG = " Your address has been successfully deleted";
+
+
 
 
 	public static List<String> getExpAccSecList() {

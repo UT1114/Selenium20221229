@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -28,7 +27,7 @@ public class DriverFactory {
 	/**
 	 * this method used to initialize the driver
 	 * 
-	 * @param browserName
+	 * @parambrowserName
 	 * @return this will return the driver
 	 */
 	public WebDriver intializeDriver(Properties prop) {
@@ -41,7 +40,6 @@ public class DriverFactory {
 
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver(optionManager.getChromeOptions());
 			tlDriver.set(new ChromeDriver(optionManager.getChromeOptions()));
 
 		}
@@ -65,8 +63,12 @@ public class DriverFactory {
 		} else {
 			System.out.println("Please pass the right browser : " + browserName);
 		}
-		// driver.manage().window().fullscreen();
-		getDriver().manage().window().maximize();
+		
+		String windowMax = prop.getProperty("window.maximize");
+		if(Boolean.parseBoolean(windowMax)) {
+			getDriver().manage().window().maximize();
+		}
+		
 		getDriver().manage().deleteAllCookies();
 		getDriver().get(prop.getProperty("url"));
 
