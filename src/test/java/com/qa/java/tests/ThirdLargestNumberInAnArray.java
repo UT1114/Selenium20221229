@@ -3,7 +3,7 @@ package com.qa.java.tests;
 public class ThirdLargestNumberInAnArray {
 
 	public static void main(String[] args) {
-		int arr[] = {100,23, 12, 65, 14, 98, 9,89,88, 77, 96 };
+		int arr[] = { 100, 23, 12, 65, 14, 98, 9, 89, 88, 77, 96 };
 		int max = 0;
 		int secondMax = 0;
 		int thirdMax = 0;

@@ -1,8 +1,13 @@
 package com.qa.java.tests;
 
-public class ArmsromNumber {
-	public static void main(String[] args) {
+import org.apache.logging.log4j.LogManager;
 
+public class ArmsromNumber {
+
+	
+	public static void main(String[] args) {
+		org.apache.logging.log4j.Logger logger= LogManager.getLogger(ArmsromNumber.class);
+             logger.info("Heelo");
 		int number = 371;
 		int number2 = number;
 		int numberLength = numberLength(number);
@@ -24,6 +29,7 @@ public class ArmsromNumber {
 
 		}
 		if (sum2 == number) {
+			
 			System.out.println("Number is armstrom");
 
 		} else {

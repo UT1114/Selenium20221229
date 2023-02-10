@@ -330,6 +330,7 @@ public class ElementUtil {
 
 	public void waitForFrameElement(String IDORNAME, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		
 	}
 
 	public void waitForFrameElement(int frameIndex, int timeOut) {

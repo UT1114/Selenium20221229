@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,17 +23,18 @@ public class DriverFactory {
 	public static String highlight;
 	OptionsManager optionManager;
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
-
+	org.apache.logging.log4j.Logger logger= org.apache.logging.log4j.LogManager.getLogger(DriverFactory.class);
 	/**
 	 * this method used to initialize the driver
 	 * 
-	 * @param browserName
+	 * @parambrowserName
 	 * @return this will return the driver
 	 */
 	public WebDriver intializeDriver(Properties prop) {
 
 		String browserName = prop.getProperty("browser");
-		System.out.println("Browser name is : " + browserName);
+		logger.info("Browser name is : " + browserName);
+//		System.out.println("Browser name is : " + browserName);
 		optionManager = new OptionsManager(prop);
 
 		highlight = prop.getProperty("highlight");
